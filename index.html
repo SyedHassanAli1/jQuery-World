@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Example</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Hello, jQuery!</h1>
+
+    <!-- // Document Ready Function -->
+    <!-- <button id="clickMe">Click Me</button>
+    <p id="message"></p> -->
+
+    <!-- // Selectors in jQuery -->
+    <!-- <h2 id="mainHeading">Main Heading</h2>
+    <p class="intro">This is an introduction.</p>
+    <p>This is another paragraph.</p>
+    <input type="text" placeholder="Type here..."> -->
+
+    <!-- Handling Events in jQuery -->
+    <!-- <button id="btnClick">Click Me</button>
+    <button id="btnDoubleClick">Double Click Me</button>
+    <input type="text" id="inputField" placeholder="Type something here">
+    <p id="hoverText">Hover over this text.</p> -->
+
+    <!-- Basic jQuery Effects -->
+    <!-- <p id="myParagraph">This is a sample paragraph.</p>
+
+    <button id="btnShow">Show</button>
+    <button id="btnHide">Hide</button>
+    <button id="btnToggle">Toggle</button>
+    <button id="btnFadeIn">Fade In</button>
+    <button id="btnFadeOut">Fade Out</button>
+    <button id="btnSlideUp">Slide Up</button>
+    <button id="btnSlideDown">Slide Down</button>
+    <button id="btnSlideToggle">Slide Toggle</button> -->
+
+    <!-- jQuery Animations -->
+    <!-- <button id="animateBtn">Animate Box</button>
+    <div id="box" style="width:100px; height:100px; background-color:blue; position:absolute;"></div> -->
+
+    <!-- jQuery Traversing -->
+    <!-- <div id="container">
+        <ul id="list">
+            <li class="item">Item 1</li>
+            <li class="item">Item 2</li>
+            <li class="item">Item 3</li>
+        </ul>
+        <p>Another paragraph</p>
+    </div>
+
+    <button id="btnParent">Get Parent</button>
+    <button id="btnChildren">Get Children</button>
+    <button id="btnSiblings">Get Siblings</button>
+    <button id="btnNext">Get Next</button>
+    <button id="btnPrev">Get Previous</button> -->
+
+    <!-- jQuery HTML Manipulation -->
+    <!-- <p id="paragraph">This is a paragraph.</p>
+    <input type="text" id="inputField" value="Type something here">
+    <button id="btnText">Change Text</button>
+    <button id="btnHTML">Change HTML</button>
+    <button id="btnVal">Get Input Value</button>
+    <button id="btnAttr">Change Attribute</button> -->
+
+    <!-- jQuery CSS Manipulation -->
+    <!-- <div id="box" style="width:100px; height:100px; background-color:lightblue;"></div>
+    <button id="btnChangeColor">Change Color</button>
+    <button id="btnAddClass">Add Class</button>
+    <button id="btnRemoveClass">Remove Class</button>
+    <button id="btnToggleClass">Toggle Class</button>
+
+    <style>
+        .highlight {
+            border: 2px solid red;
+            background-color: yellow !important;
+        }
+    </style> -->
+
+    <!-- jQuery AJAX -->
+    <!-- <div id="content">Content will load here.</div>
+    <button id="loadData">Load Data</button> -->
+
+    <script>
+
+        // Document Ready Function
+        $(document).ready(function () {
+            $("#clickMe").click(function () {
+                $("#message").text("Button was clicked!");
+                // alert("You clicked the button!");
+            });
+        });
+
+        // Selectors in jQuery
+        $(document).ready(function () {
+            // Selecting an element by id
+            $("#mainHeading").css("color", "red");
+            // Selecting an element by class
+            $(".intro").css("background-color", "lightblue");
+            // Selecting an element by tag name
+            $("p").css("background-color", "lightgrey");
+            // Attribute Selector
+            $("input[type='text']").css("border", "2px solid blue");
+        })
+
+        // Handling Events in jQuery
+        $(document).ready(function () {
+            // Click Event
+            $("#btnClick").click(function () {
+                alert("Button is clicked!");
+            });
+            // Double Click Event
+            $("#btnDoubleClick").dblclick(function () {
+                alert("Button is double clicked!");
+            });
+            // Focus event
+            $("#inputField").focus(function () {
+                $(this).css("background-color", "lightyellow");
+            });
+            // Blur event
+            $("#inputField").blur(function () {
+                $(this).css("background-color", "white");
+            });
+            // Hover (mouseenter and mouseleave combined)
+            $("#hoverText").hover(
+                function () {
+                    $(this).css("color", "green");
+                },
+                function () {
+                    $(this).css("color", "black");
+                }
+            );
+        })
+
+        // Basic jQuery Effects  
+        $(document).ready(function () {
+            // Show
+            $("#btnShow").click(function () {
+                $("#myParagraph").show();
+            });
+
+            // Hide
+            $("#btnHide").click(function () {
+                $("#myParagraph").hide();
+            });
+
+            // Toggle
+            $("#btnToggle").click(function () {
+                $("#myParagraph").toggle();
+            });
+
+            // Fade In
+            $("#btnFadeIn").click(function () {
+                $("#myParagraph").fadeIn();
+            });
+
+            // Fade Out
+            $("#btnFadeOut").click(function () {
+                $("#myParagraph").fadeOut();
+            });
+
+            // Slide Up
+            $("#btnSlideUp").click(function () {
+                $("#myParagraph").slideUp();
+            });
+
+            // Slide Down
+            $("#btnSlideDown").click(function () {
+                $("#myParagraph").slideDown();
+            });
+
+            // Slide Toggle
+            $("#btnSlideToggle").click(function () {
+                $("#myParagraph").slideToggle();
+            });
+        });
+
+        // jQuery Animations
+        $(document).ready(function () {
+            $("#animateBtn").click(function () {
+
+
+                $("#box").animate({ left: '250px', width: '200px', height: '200px', opacity: 0.5 }, 1000, function () {
+                    alert("Animation complete!");
+                });
+
+                // Changing
+                // $("#box").animate({ left: '250px' }, "slow")
+                // $("#box").animate({ height: '200px' }, "slow")
+                // $("#box").animate({ width: '200px' }, "slow")
+                // $("#box").animate({ opacity: 0.5 }, "slow");
+
+            });
+        });
+
+        // jQuery Traversing
+        $(document).ready(function () {
+            // Parent
+            $("#btnParent").click(function () {
+                alert($("#list").parent().prop("tagName")); // Should alert "DIV"
+            });
+
+            // Children
+            $("#btnChildren").click(function () {
+                $("#list").children().css("color", "blue"); // Changes color of all <li> items to blue
+            });
+
+            // Siblings
+            $("#btnSiblings").click(function () {
+                $("#list").siblings().css("color", "green"); // Changes color of <p> to green
+            });
+
+            // Next
+            $("#btnNext").click(function () {
+                $(".item:first").next().css("font-weight", "bold"); // Makes "Item 2" bold
+            });
+
+            // Previous
+            $("#btnPrev").click(function () {
+                $(".item:last").prev().css("font-weight", "bold"); // Makes "Item 2" bold
+            });
+        });
+
+        // jQuery HTML Manipulation
+        $(document).ready(function () {
+            // text() method
+            $("#btnText").click(function () {
+                $("#paragraph").text("Text has been changed!"); // Replaces paragraph text
+            });
+
+            // html() method
+            $("#btnHTML").click(function () {
+                $("#paragraph").html("<strong>HTML content has been changed!</strong>"); // Replaces paragraph with bold text
+            });
+
+            // val() method
+            $("#btnVal").click(function () {
+                alert($("#inputField").val()); // Shows an alert with the current input value
+            });
+
+            // attr() method
+            $("#btnAttr").click(function () {
+                $("#inputField").attr("placeholder", "New placeholder text"); // Changes the input placeholder
+            });
+        });
+
+        // jQuery CSS Manipulation
+        $(document).ready(function () {
+            // css() method
+            $("#btnChangeColor").click(function () {
+                $("#box").css("background-color", "green"); // Changes background color to green
+            });
+
+            // addClass() method
+            $("#btnAddClass").click(function () {
+                $("#box").addClass("highlight"); // Adds the 'highlight' class to the box
+            });
+
+            // removeClass() method
+            $("#btnRemoveClass").click(function () {
+                $("#box").removeClass("highlight"); // Removes the 'highlight' class from the box
+            });
+
+            // toggleClass() method
+            $("#btnToggleClass").click(function () {
+                $("#box").toggleClass("highlight"); // Toggles the 'highlight' class
+            });
+        });
+
+        // jQuery AJAX
+        $(document).ready(function () {
+
+            //GET
+            // $("#loadData").click(function () {
+            //     $.get("https://jsonplaceholder.typicode.com/posts/1", function (data) {
+            //         $("#content").html("<h3>" + data.title + "</h3><p>" + data.title + "</p>");
+            //     });
+            // });
+
+            // Advanced Option
+            $("#loadData").click(function () {
+                $.ajax({
+                    url: "https://jsonplaceholder.typicode.com/posts/1",
+                    method: "GET",
+                    success: function (data) {
+                        $("#content").html("<h3>" + data.title + "</h3><p>" + data.title + "</p>");
+                    },
+                    error: function () {
+                        alert("Error loading data.");
+                    }
+                });
+            });
+
+            //POST
+            // $("#loadData").click(function () {
+            //     $.post("https://example.com/api", { name: "Hassan", age: 25 }, function (response) {
+            //         alert("Server Response: " + response.message);
+            //     });
+            // });
+
+            // Advanced Option
+            // $("#loadData").click(function () {
+            //     $.ajax({
+            //         url: "https://example.com/api",
+            //         type: "POST", // HTTP method type
+            //         data: { name: "Hassan", age: 25 }, // Data to be sent to the server
+            //         success: function (response) {
+            //             alert("Server Response: " + response.message);
+            //         },
+            //         error: function (xhr, status, error) {
+            //             alert("An error occurred: " + error);
+            //         }
+            //     });
+            // });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
